@@ -10,7 +10,13 @@ async function getAllGames() {
   return result.rows;
 }
 
+async function getAllCategories() {
+  const result = await pool.query("SELECT * FROM subgenres");
+  return result.rows;
+}
+
 module.exports = {
   getFeaturedGames,
   getAllGames,
+  getAllCategories,
 };

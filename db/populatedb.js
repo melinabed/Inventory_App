@@ -12,6 +12,11 @@ const SQL = `CREATE TABLE IF NOT EXISTS games (
     image_path TEXT
 );
 
+CREATE TABLE IF NOT EXISTS subgenres (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY NOT NULL,
+  name VARCHAR (255)
+);
+
 INSERT INTO games (name, developer, publisher, release_date, price, image_path)
 VALUES 
 ('The Sims 4', 'Maxis', 'EA', '2014-09-01', 0.00, '/images/thesims4.jpg'),
@@ -23,6 +28,11 @@ VALUES
 ('Planet Coaster 2', 'Frontier Developments', 'Frontier Developments', '2024-11-16', '49.99', '/images/planetCoaster.jpg'),
 ('House Flipper 2', 'Frozen District', 'Frozen District', '2023-12-14', '39.99', '/images/houseflip.jpg'),
 ('Powerwash Simulator', 'FuturLab', 'SquareEnix', '2022-07-14', '24.99', '/images/powerwash.jpg');
+
+
+
+INSERT INTO subgenres (name)
+VALUES ('Life Sim'), ('Business Sim'), ('Farming Sim'), ('Truck Driving Sim'), ('Building Sim'), ('Home Renovation Sim'), ('Cleaning Sim');
 `;
 
 async function main() {

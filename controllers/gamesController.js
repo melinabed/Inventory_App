@@ -23,7 +23,19 @@ const getAllGames = asyncHandler(async (req, res) => {
   res.render("allGames", { games: games });
 });
 
+const getAllCategories = asyncHandler(async (req, res) => {
+  const categories = await db.getAllCategories();
+
+  if (!categories || categories.length === 0) {
+    res.status(404).send("No categories found");
+    return;
+  }
+
+  res.render("categories", { categories: categories });
+});
+
 module.exports = {
   getGames,
   getAllGames,
+  getAllCategories,
 };

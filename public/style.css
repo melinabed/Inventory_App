@@ -22,18 +22,34 @@ main {
   list-style: none;
 }
 
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  margin-top: 50px;
+}
+
+.categories-container .card {
+  text-align: center;
+}
+
+.categories-container .card:last-child {
+  grid-area: 3/2/4/3;
+}
+
 .card {
   padding: 10px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  width: 450px;
+  max-width: 450px;
 }
 
 .card-image {
   border-radius: 10px;
   height: auto;
-  width: 450px;
+  max-width: 450px;
 }
 
 #all-games-link {
