@@ -10,6 +10,13 @@ async function getAllGames() {
   return result.rows;
 }
 
+async function getGameById(gameId) {
+  const result = await pool.query("SELECT * FROM games WHERE id = $1", [
+    gameId,
+  ]);
+  return result.rows[0];
+}
+
 async function getAllCategories() {
   const subgenreResult = await pool.query("SELECT * FROM subgenres");
   const platformResult = await pool.query("SELECT * FROM platforms");
@@ -25,5 +32,6 @@ async function getAllCategories() {
 module.exports = {
   getFeaturedGames,
   getAllGames,
+  getGameById,
   getAllCategories,
 };

@@ -13,16 +13,18 @@
       <ul class="game-card-container">
         <% games.map(game => { %>
         <li class="card">
-          <img
-            class="card-image"
-            src="<%= game.image_path %>"
-            alt="<%= game.name %>"
-          />
-          <h3><%= game.name %></h3>
+          <a href="/games/<%= game.id %>">
+            <img
+              class="card-image"
+              src="<%= game.image_path %>"
+              alt="<%= game.name %>"
+            />
+            <h3><%= game.name %></h3>
+          </a>
         </li>
         <% }); %>
       </ul>
-      <a id="all-games-link" href="/allGames">\\ Show More //</a>
+      <a id="all-games-link" href="/games">\\ Show More //</a>
     </main>
   </body>
 </html>

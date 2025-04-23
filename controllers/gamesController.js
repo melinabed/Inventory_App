@@ -23,6 +23,17 @@ const getAllGames = asyncHandler(async (req, res) => {
   res.render("allGames", { games: games });
 });
 
+const getGameById = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const game = await db.getGameById(id);
+
+  if (!game) {
+    res.status(404).send("Game not found");
+  }
+
+  res.render("gameInfo", { game: game });
+});
+
 const getAllCategories = asyncHandler(async (req, res) => {
   const categories = await db.getAllCategories();
 
@@ -42,4 +53,5 @@ module.exports = {
   getGames,
   getAllGames,
   getAllCategories,
+  getGameById,
 };

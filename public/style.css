@@ -15,6 +15,13 @@ main {
   padding: 40px;
 }
 
+.gameId-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

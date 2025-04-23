@@ -5,7 +5,9 @@ const indexRouter = Router();
 
 indexRouter.get("/", gamesController.getGames);
 
-indexRouter.get("/allGames", gamesController.getAllGames);
+indexRouter.get("/games", gamesController.getAllGames);
+
+indexRouter.get("/games/:id", gamesController.getGameById);
 
 indexRouter.get("/categories", gamesController.getAllCategories);
 
