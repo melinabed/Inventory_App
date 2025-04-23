@@ -5,4 +5,6 @@ const indexRouter = Router();
 
 indexRouter.get("/", gamesController.getGames);
 
+indexRouter.get("/allGames", gamesController.getAllGames);
+
 module.exports = indexRouter;
