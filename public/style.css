@@ -27,7 +27,6 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   list-style: none;
-  margin-top: 50px;
 }
 
 .categories-container .card {

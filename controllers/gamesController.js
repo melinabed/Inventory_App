@@ -31,7 +31,11 @@ const getAllCategories = asyncHandler(async (req, res) => {
     return;
   }
 
-  res.render("categories", { categories: categories });
+  res.render("categories", {
+    subgenres: categories.subgenres,
+    platforms: categories.platforms,
+    gameModes: categories.gameModes,
+  });
 });
 
 module.exports = {

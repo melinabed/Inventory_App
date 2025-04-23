@@ -17,6 +17,17 @@ CREATE TABLE IF NOT EXISTS subgenres (
   name VARCHAR (255)
 );
 
+CREATE TABLE IF NOT EXISTS platforms (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY NOT NULL,
+  name VARCHAR (255)
+);
+
+CREATE TABLE IF NOT EXISTS game_modes (
+ id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY NOT NULL,
+ name VARCHAR (255) NOT NULL
+);
+
+
 INSERT INTO games (name, developer, publisher, release_date, price, image_path)
 VALUES 
 ('The Sims 4', 'Maxis', 'EA', '2014-09-01', 0.00, '/images/thesims4.jpg'),
@@ -29,10 +40,14 @@ VALUES
 ('House Flipper 2', 'Frozen District', 'Frozen District', '2023-12-14', '39.99', '/images/houseflip.jpg'),
 ('Powerwash Simulator', 'FuturLab', 'SquareEnix', '2022-07-14', '24.99', '/images/powerwash.jpg');
 
-
-
 INSERT INTO subgenres (name)
 VALUES ('Life Sim'), ('Business Sim'), ('Farming Sim'), ('Truck Driving Sim'), ('Building Sim'), ('Home Renovation Sim'), ('Cleaning Sim');
+
+INSERT INTO platforms (name)
+VALUES ('PC', 'Xbox', 'PS5', 'Switch');
+
+INSERT INTO game_modes (name)
+VALUES ('Single Player'), ('Online Co-op'), ('LAN Co-op'), ('Shared/Split Screen Co-op');
 `;
 
 async function main() {

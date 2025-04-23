@@ -11,9 +11,25 @@
     <main>
       <h2>Subgenre</h2>
       <ul class="categories-container">
-        <% categories.map(category => { %>
+        <% subgenres.map(subgenre => { %>
         <li class="card">
-          <h3><%= category.name %></h3>
+          <h3><%= subgenre.name %></h3>
+        </li>
+        <% }); %>
+      </ul>
+      <h2>Platforms</h2>
+      <ul class="categories-container">
+        <% platforms.map(platform => { %>
+        <li class="card">
+          <h3><%= platform.name %></h3>
+        </li>
+        <% }); %>
+      </ul>
+      <h2>Game Modes</h2>
+      <ul class="categories-container">
+        <% gameModes.map(mode => { %>
+        <li class="card">
+          <h3><%= mode.name %></h3>
         </li>
         <% }); %>
       </ul>

@@ -11,8 +11,15 @@ async function getAllGames() {
 }
 
 async function getAllCategories() {
-  const result = await pool.query("SELECT * FROM subgenres");
-  return result.rows;
+  const subgenreResult = await pool.query("SELECT * FROM subgenres");
+  const platformResult = await pool.query("SELECT * FROM platforms");
+  const gameModeResult = await pool.query("SELECT * FROM game_modes");
+
+  return {
+    subgenres: subgenreResult.rows,
+    platforms: platformResult.rows,
+    gameModes: gameModeResult.rows,
+  };
 }
 
 module.exports = {
