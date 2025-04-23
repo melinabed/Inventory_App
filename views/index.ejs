@@ -16,5 +16,19 @@
         <a href="/submit">Submit a Game</a>
       </nav>
     </header>
+    <main>
+      <ul class="game-card-container">
+        <% games.map(game => { %>
+        <li class="card">
+          <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+          <h2><%= game.name %></h2>
+          <p>Developer: <%= game.developer %></p>
+          <p>Publisher: <%= game.publisher %></p>
+          <p>Release Date: <%= game.release_date %></p>
+          <p>Price: <%= game.price %></p>
+        </li>
+        <% }); %>
+      </ul>
+    </main>
   </body>
 </html>
