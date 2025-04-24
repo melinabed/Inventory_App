@@ -27,9 +27,11 @@ app.use((err, req, res, next) => {
 const PORT = process.env.LOCAL_PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
-//Categories page shows pages by subgenre, platform, and game mode
 //Submit a game brings up a form to add a new game with heavy contraints
 //Search allows the page to display a game that was searched for
 //Maybe a delete game feature with secret password
-//Unique page with more details about game
+//Fix date because it looks atrocious
+
+//Lastly make it burtiful.
+
 //Error Handling?

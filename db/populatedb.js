@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 const { Client } = require("pg");
+require("dotenv").config();
 
 const SQL = `CREATE TABLE IF NOT EXISTS games (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -53,7 +54,7 @@ VALUES ('Single Player'), ('Online Co-op'), ('LAN Co-op'), ('Shared/Split Screen
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: "postgresql://melinabed:0720@localhost:5432/sim_games",
+    connectionString: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
   });
   await client.connect();
   await client.query(SQL);
