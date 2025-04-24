@@ -31,6 +31,17 @@ const getGameById = asyncHandler(async (req, res) => {
     res.status(404).send("Game not found");
   }
 
+  if (game.release_date) {
+    game.release_date = new Date(game.release_date).toLocaleDateString(
+      "en-US",
+      {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }
+    );
+  }
+
   res.render("gameInfo", { game: game });
 });
 

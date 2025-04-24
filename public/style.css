@@ -62,3 +62,13 @@ main {
   position: relative;
   left: 50%;
 }
+
+/* 404 Error Page */
+
+.error404-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

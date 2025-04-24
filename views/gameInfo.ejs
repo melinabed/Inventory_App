@@ -16,7 +16,7 @@
       <p>Developer: <%= game.developer %></p>
       <p>Publisher: <%= game.publisher %></p>
       <p>Release Date: <%= game.release_date %></p>
-      <p>Price: <%= game.price %></p>
+      <p>Price: <%= game.price === "0.00" ? "Free" : game.price %></p>
     </main>
   </body>
 </html>
