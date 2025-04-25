@@ -11,4 +11,9 @@ indexRouter.get("/games/:id", gamesController.getGameById);
 
 indexRouter.get("/categories", gamesController.getAllCategories);
 
+indexRouter.get(
+  "/categories/:category/:categoryName",
+  gamesController.getGamesByCategory
+);
+
 module.exports = indexRouter;

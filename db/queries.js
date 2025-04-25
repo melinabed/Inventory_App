@@ -29,9 +29,27 @@ async function getAllCategories() {
   };
 }
 
+async function getSubCategory(
+  category,
+  categoryName,
+  relation,
+  relationColumn
+) {
+  const result = await pool.query(
+    `SELECT g.*
+    FROM games g
+    JOIN ${relation} rel ON g.id = rel.game_id
+    JOIN ${category} c ON c.id = rel.${relationColumn}
+    WHERE c.name = $1`,
+    [categoryName]
+  );
+  return result.rows;
+}
+
 module.exports = {
   getFeaturedGames,
   getAllGames,
   getGameById,
   getAllCategories,
+  getSubCategory,
 };

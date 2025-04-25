@@ -74,3 +74,10 @@ main {
   align-items: center;
   height: 100vh;
 }
+
+/* gameInCategory Page */
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

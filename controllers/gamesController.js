@@ -60,9 +60,50 @@ const getAllCategories = asyncHandler(async (req, res) => {
   });
 });
 
+const getGamesByCategory = asyncHandler(async (req, res) => {
+  const { category, categoryName } = req.params;
+
+  let games;
+
+  if (category === "subgenre") {
+    games = await db.getSubCategory(
+      "subgenres",
+      categoryName,
+      "game_subgenres",
+      "subgenre_id"
+    );
+  } else if (category === "platform") {
+    games = await db.getSubCategory(
+      "platforms",
+      categoryName,
+      "game_platforms",
+      "platform_id"
+    );
+  } else if (category === "mode") {
+    games = await db.getSubCategory(
+      "game_modes",
+      categoryName,
+      "game_game_modes",
+      "mode_id"
+    );
+  }
+
+  if (!games || games.length === 0) {
+    res.status(404).send("No games found");
+    return;
+  }
+
+  res.render("gamesInCategory", {
+    games: games,
+    categoryName: categoryName,
+    category: category,
+  });
+});
+
 module.exports = {
   getGames,
   getAllGames,
   getAllCategories,
   getGameById,
+  getGamesByCategory,
 };
