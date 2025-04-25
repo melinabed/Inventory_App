@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Search Results...</h1>
+    <main>
+      <ul>
+        <% games.map(game => { %>
+        <li>
+          <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+          <h2><%= game.name %></h2>
+        </li>
+        <% }); %>
+      </ul>
+    </main>
+  </body>
+</html>

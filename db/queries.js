@@ -46,10 +46,18 @@ async function getSubCategory(
   return result.rows;
 }
 
+async function postSearchGame(name) {
+  const result = await pool.query("SELECT * FROM games WHERE name ILIKE $1", [
+    `%${name}%`,
+  ]);
+  return result.rows;
+}
+
 module.exports = {
   getFeaturedGames,
   getAllGames,
   getGameById,
   getAllCategories,
   getSubCategory,
+  postSearchGame,
 };

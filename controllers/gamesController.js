@@ -100,10 +100,24 @@ const getGamesByCategory = asyncHandler(async (req, res) => {
   });
 });
 
+const searchGame = asyncHandler(async (req, res) => {
+  const { search } = req.body;
+
+  const games = await db.postSearchGame(search);
+
+  if (!games || games.length === 0) {
+    res.status(404).send("No games found");
+    return;
+  }
+
+  res.render("searchResults", { games: games });
+});
+
 module.exports = {
   getGames,
   getAllGames,
   getAllCategories,
   getGameById,
   getGamesByCategory,
+  searchGame,
 };

@@ -6,6 +6,8 @@ require("dotenv").config();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(express.urlencoded({ extended: true }));
+
 const indexRouter = require("./routes/indexRouter");
 
 app.use("/", indexRouter);
@@ -28,7 +30,6 @@ const PORT = process.env.LOCAL_PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
 //Submit a game brings up a form to add a new game with heavy contraints
-//Search allows the page to display a game that was searched for
 //Maybe a delete game feature with secret password
 //Fix bug not displaying game modes
 
