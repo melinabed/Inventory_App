@@ -2,6 +2,7 @@
   --black0: oklch(14.5% 0 0);
   --black1: oklch(20.5% 0 0);
   --hotPink: oklch(59.2% 0.249 0.584);
+  --hotPink1: oklch(41% 0.159 10.272);
   --white: oklch(98.5% 0 0);
 }
 
@@ -9,6 +10,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--black0);
 }
 
 /* Header */
@@ -23,6 +25,10 @@ header {
 
 header h1 {
   color: var(--hotPink);
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5rem;
 }
 
 nav {
@@ -37,10 +43,15 @@ nav form input {
   border-radius: 10px;
   font-size: 1.25rem;
   color: var(--hotPink);
+  outline: none;
 }
 
 nav form {
   margin-right: 20px;
+}
+
+.links {
+  margin-right: 50px;
 }
 
 .links a {
@@ -63,10 +74,11 @@ main h2 {
 
 .gameId-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--white);
+  gap: 50px;
+  font-weight: bold;
 }
 
 .gameId-container .image-container img {
@@ -143,6 +155,8 @@ main h2 {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: var(--white);
+  gap: 50px;
 }
 
 /* gameInCategory Page */
@@ -152,8 +166,9 @@ main h2 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.game-card {
+.game-card a {
   color: var(--white);
+  text-decoration: none;
 }
 
 .game-card img {
@@ -177,12 +192,15 @@ main h2 {
 
 .game-form-container form {
   display: grid;
-  padding: 20px;
+  padding: 40px;
   gap: 10px;
   background-color: var(--black1);
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .game-form-container form label {
@@ -193,12 +211,24 @@ main h2 {
 .game-form-container form input {
   padding: 5px 10px;
   font-size: 1.25rem;
+  border-radius: 5px;
+  border: none;
 }
 
 .game-form-container form button {
   padding: 10px;
   font-size: 1.25rem;
   cursor: pointer;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: var(--hotPink);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+}
+
+.game-form-container form button:active {
+  background-color: var(--hotPink1);
 }
 
 #home-button {

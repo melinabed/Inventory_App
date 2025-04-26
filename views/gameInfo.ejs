@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Game Information</title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+    </style>
   </head>
   <body>
     <%- include('header') %>
     <main class="gameId-container">
-      <h1><%= game.name %></h1>
-      <div class="image-container">
-        <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+      <div class="left">
+        <h1><%= game.name %></h1>
+        <div class="image-container">
+          <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+        </div>
       </div>
-      <p>Developer: <%= game.developer %></p>
-      <p>Publisher: <%= game.publisher %></p>
-      <p>Release Date: <%= game.release_date %></p>
-      <p>Price: <%= game.price === "0.00" ? "Free" : game.price %></p>
+      <div class="info">
+        <p>Developer: <%= game.developer %></p>
+        <p>Publisher: <%= game.publisher %></p>
+        <p>Release Date: <%= game.release_date %></p>
+        <p>Price: <%= game.price === "0.00" ? "Free" : game.price %></p>
+      </div>
     </main>
   </body>
 </html>

@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Games in <%= category %></title>
     <link rel="stylesheet" href="/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+    </style>
   </head>
   <body>
     <%- include('header') %>
     <main>
-      <h2><%= categoryName %></h2>
+      <h2><%= categoryName %> Games</h2>
       <div class="games-container">
         <% games.forEach(game => { %>
         <div class="game-card">
-          <img src="<%= game.image_path %>" alt="<%= game.name %>" />
-          <h3><%= game.name %></h3>
-          <p><%= game.developer %></p>
-          <p><%= game.publisher %></p>
-          <p><%= game.release_date %></p>
-          <p><%= game.price %></p>
+          <a href="/games/<%= game.id %>">
+            <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+            <h3><%= game.name %></h3>
+          </a>
         </div>
         <% }); %>
       </div>

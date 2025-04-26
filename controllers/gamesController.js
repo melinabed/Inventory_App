@@ -106,7 +106,7 @@ const searchGame = asyncHandler(async (req, res) => {
   const games = await db.postSearchGame(search);
 
   if (!games || games.length === 0) {
-    res.status(404).send("No games found");
+    res.status(404).render("/partials/error", { error: error });
     return;
   }
 
