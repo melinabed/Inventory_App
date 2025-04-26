@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Search Results...</h1>
-    <main>
-      <ul>
-        <% games.map(game => { %>
-        <li>
-          <img src="<%= game.image_path %>" alt="<%= game.name %>" />
-          <h2><%= game.name %></h2>
-        </li>
-        <% }); %>
-      </ul>
-    </main>
+    <%- include('header') %>
+    <div class="search-results-container">
+      <h2>Search Results...</h2>
+      <main>
+        <ul class="search-result">
+          <% games.map(game => { %>
+          <li>
+            <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+            <h3><%= game.name %></h3>
+          </li>
+          <% }); %>
+        </ul>
+      </main>
+    </div>
   </body>
 </html>

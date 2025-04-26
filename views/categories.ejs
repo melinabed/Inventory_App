@@ -9,7 +9,7 @@
   <body>
     <%- include('header') %>
     <main>
-      <h2>Subgenre</h2>
+      <h2 id="catergory-header">Subgenre</h2>
       <ul class="categories-container">
         <% subgenres.map(subgenre => { %>
         <li class="card">
@@ -19,7 +19,7 @@
         </li>
         <% }); %>
       </ul>
-      <h2>Platforms</h2>
+      <h2 id="catergory-header">Platforms</h2>
       <ul class="categories-container">
         <% platforms.map(platform => { %>
         <li class="card">
@@ -29,7 +29,7 @@
         </li>
         <% }); %>
       </ul>
-      <h2>Game Modes</h2>
+      <h2 id="catergory-header">Game Modes</h2>
       <ul class="categories-container">
         <% gameModes.map(mode => { %>
         <li class="card">

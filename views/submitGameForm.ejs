@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Game</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="game-form-container">
+      <h1 id="game-form-header">Submit A Game!</h1>
+      <form class="game-form" action="/submitGame">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="The Sim 3" />
+
+        <label for="developer">Developer: </label>
+        <input type="text" name="developer" id="developer" />
+
+        <label for="publisher">Publisher: </label>
+        <input type="text" name="publisher" id="publisher" />
+
+        <label for="releaseDate">Release Date: </label>
+        <input type="date" name="releaseDate" id="releaseDate" />
+
+        <label for="price">Price: </label>
+        <input type="text" name="price" id="price" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <a id="home-button" href="/"><-- Go Home</a>
+  </body>
+</html>

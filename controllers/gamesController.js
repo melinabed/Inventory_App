@@ -113,6 +113,10 @@ const searchGame = asyncHandler(async (req, res) => {
   res.render("searchResults", { games: games });
 });
 
+const getSubmitGameForm = asyncHandler(async (req, res) => {
+  res.render("submitGameForm");
+});
+
 module.exports = {
   getGames,
   getAllGames,
@@ -120,4 +124,5 @@ module.exports = {
   getGameById,
   getGamesByCategory,
   searchGame,
+  getSubmitGameForm,
 };
