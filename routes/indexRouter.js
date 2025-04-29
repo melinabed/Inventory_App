@@ -22,4 +22,6 @@ indexRouter.post("/search", gamesController.searchGame);
 
 indexRouter.post("/submitForm", gamesController.submitForm);
 
+indexRouter.post("/delete/:id", gamesController.deleteGame);
+
 module.exports = indexRouter;

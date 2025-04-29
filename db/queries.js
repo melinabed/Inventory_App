@@ -53,13 +53,17 @@ async function postSearchGame(name) {
   return result.rows;
 }
 
-//
 async function postSubmitForm(name, developer, publisher, date, price) {
   const result = await pool.query(
     `INSERT INTO games (name, developer, publisher, release_date, price) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
     [name, developer, publisher, date, price]
   );
   return result.rows;
+}
+
+async function postDeleteGame(gameId) {
+  const result = await pool.query("DELETE FROM games WHERE id = $1", [gameId]);
+  return result;
 }
 
 module.exports = {
@@ -70,4 +74,5 @@ module.exports = {
   getSubCategory,
   postSearchGame,
   postSubmitForm,
+  postDeleteGame,
 };

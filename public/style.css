@@ -289,3 +289,23 @@ main h2 {
 .search-item {
   text-decoration: none;
 }
+
+/*Delete Button*/
+
+#delete-button {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--hotPink);
+  color: var(--hotPink);
+  border-radius: 10px;
+}
+
+#delete-button:hover {
+  background-color: var(--hotPink);
+  color: var(--black0);
+}

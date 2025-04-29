@@ -23,7 +23,27 @@
         <p>Publisher: <%= game.publisher %></p>
         <p>Release Date: <%= game.release_date %></p>
         <p>Price: <%= game.price === "0.00" ? "Free" : game.price %></p>
+        <form
+          action="/delete/<%= game.id %>"
+          method="post"
+          onsubmit="return confirmDelete()"
+        >
+          <button id="delete-button" type="submit">Delete</button>
+        </form>
       </div>
     </main>
+    <script>
+      function confirmDelete() {
+        const password = prompt(
+          "Enter the admin password to delete this game."
+        );
+        if (password === "simslife123") {
+          return true;
+        } else {
+          alert("Incorrect password");
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

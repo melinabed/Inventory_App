@@ -135,6 +135,14 @@ const submitForm = asyncHandler(async (req, res) => {
   res.redirect("/games");
 });
 
+const deleteGame = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  await db.postDeleteGame(id);
+
+  res.redirect("/");
+});
+
 module.exports = {
   getGames,
   getAllGames,
@@ -144,4 +152,5 @@ module.exports = {
   searchGame,
   getSubmitGameForm,
   submitForm,
+  deleteGame,
 };
