@@ -16,9 +16,11 @@
       <main>
         <ul class="search-result">
           <% games.map(game => { %>
-          <li>
-            <img src="<%= game.image_path %>" alt="<%= game.name %>" />
-            <h3><%= game.name %></h3>
+          <li class="search-item">
+            <a href="/games/<%= game.id %>">
+              <img src="<%= game.image_path %>" alt="<%= game.name %>" />
+              <h3><%= game.name %></h3>
+            </a>
           </li>
           <% }); %>
         </ul>

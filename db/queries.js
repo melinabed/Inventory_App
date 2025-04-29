@@ -53,6 +53,15 @@ async function postSearchGame(name) {
   return result.rows;
 }
 
+//
+async function postSubmitForm(name, developer, publisher, date, price) {
+  const result = await pool.query(
+    `INSERT INTO games (name, developer, publisher, release_date, price) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+    [name, developer, publisher, date, price]
+  );
+  return result.rows;
+}
+
 module.exports = {
   getFeaturedGames,
   getAllGames,
@@ -60,4 +69,5 @@ module.exports = {
   getAllCategories,
   getSubCategory,
   postSearchGame,
+  postSubmitForm,
 };

@@ -20,4 +20,6 @@ indexRouter.get("/getForm", gamesController.getSubmitGameForm);
 
 indexRouter.post("/search", gamesController.searchGame);
 
+indexRouter.post("/submitForm", gamesController.submitForm);
+
 module.exports = indexRouter;

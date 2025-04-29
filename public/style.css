@@ -41,6 +41,7 @@ nav form input {
   padding: 5px 10px;
   background-color: var(--black1);
   border-radius: 10px 0 0 10px;
+  border: none;
   font-size: 1.25rem;
   color: var(--hotPink);
   outline: none;
@@ -86,6 +87,8 @@ main {
 
 main h2 {
   color: var(--white);
+  font-size: 2rem;
+  text-align: center;
 }
 
 .gameId-container {
@@ -99,6 +102,8 @@ main h2 {
 
 .gameId-container .image-container img {
   border-radius: 10px;
+  height: auto;
+  min-width: 500px;
 }
 
 .game-card-container {
@@ -148,7 +153,7 @@ main h2 {
 .card-image {
   border-radius: 10px;
   height: auto;
-  max-width: 500px;
+  min-width: 500px;
 }
 
 #all-games-link {
@@ -277,4 +282,10 @@ main h2 {
 .search-result {
   list-style: none;
   color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.search-item {
+  text-decoration: none;
 }

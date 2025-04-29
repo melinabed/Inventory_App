@@ -117,6 +117,24 @@ const getSubmitGameForm = asyncHandler(async (req, res) => {
   res.render("submitGameForm");
 });
 
+const submitForm = asyncHandler(async (req, res) => {
+  const { name, developer, publisher, date, price } = req.body;
+
+  if (!name || !developer || !publisher || !date || !price) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  const newGame = await db.postSubmitForm(
+    name,
+    developer,
+    publisher,
+    date,
+    price
+  );
+
+  res.redirect("/games");
+});
+
 module.exports = {
   getGames,
   getAllGames,
@@ -125,4 +143,5 @@ module.exports = {
   getGamesByCategory,
   searchGame,
   getSubmitGameForm,
+  submitForm,
 };
