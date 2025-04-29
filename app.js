@@ -31,8 +31,7 @@ app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
 //Submit a game brings up a form to add a new game with heavy contraints
 //Maybe a delete game feature with secret password
-//Fix bug not displaying game modes
 
 //Lastly make it burtiful.
 
-//Error Handling?
+//Error Handling? (80% there)
