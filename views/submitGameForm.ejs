@@ -28,9 +28,12 @@
         <label for="price">Price: </label>
         <input type="text" name="price" id="price" />
 
+        <%- include('partials/form-error.ejs') %>
+
         <button type="submit">Submit</button>
       </form>
     </div>
+
     <a id="home-button" href="/">Go Home</a>
   </body>
 </html>

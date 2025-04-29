@@ -1,5 +1,37 @@
 const db = require("../db/queries");
 const asyncHandler = require("express-async-handler");
+const { body, validationResult } = require("express-validator");
+
+const lengthErr = "must be less than 255 characters.";
+const isNullErr = "is required.";
+const priceErr = "must be a valid decimal number.";
+
+const validateGameSubmisson = [
+  body("name")
+    .trim()
+    .isLength({ min: 1, max: 255 })
+    .withMessage(`Name ${lengthErr}`)
+    .notEmpty()
+    .withMessage(`Name ${isNullErr}`),
+  body("developer")
+    .trim()
+    .isLength({ min: 1, max: 255 })
+    .withMessage(`Developer ${lengthErr}`)
+    .notEmpty()
+    .withMessage(`Developer ${isNullErr}`),
+  body("publisher")
+    .trim()
+    .isLength({ min: 1, max: 255 })
+    .withMessage(`Publisher ${lengthErr}`)
+    .notEmpty()
+    .withMessage(`Publisher ${isNullErr}`),
+  body("date").notEmpty().withMessage(`Release Date ${isNullErr}`),
+  body("price")
+    .notEmpty()
+    .withMessage(`Price ${isNullErr}`)
+    .isDecimal({ decimal_digits: "0,2" })
+    .withMessage(`Price ${priceErr}`),
+];
 
 const getGames = asyncHandler(async (req, res) => {
   const games = await db.getFeaturedGames();
@@ -118,11 +150,15 @@ const getSubmitGameForm = asyncHandler(async (req, res) => {
 });
 
 const submitForm = asyncHandler(async (req, res) => {
-  const { name, developer, publisher, date, price } = req.body;
+  const errors = validationResult(req);
 
-  if (!name || !developer || !publisher || !date || !price) {
-    return res.status(400).json({ error: "All fields are required." });
+  if (!errors.isEmpty()) {
+    return res.status(400).render("submitGameForm", {
+      errors: errors.array(),
+    });
   }
+
+  const { name, developer, publisher, date, price } = req.body;
 
   const newGame = await db.postSubmitForm(
     name,
@@ -152,5 +188,6 @@ module.exports = {
   searchGame,
   getSubmitGameForm,
   submitForm,
+  validateGameSubmisson,
   deleteGame,
 };

@@ -20,7 +20,11 @@ indexRouter.get("/getForm", gamesController.getSubmitGameForm);
 
 indexRouter.post("/search", gamesController.searchGame);
 
-indexRouter.post("/submitForm", gamesController.submitForm);
+indexRouter.post(
+  "/submitForm",
+  gamesController.validateGameSubmisson,
+  gamesController.submitForm
+);
 
 indexRouter.post("/delete/:id", gamesController.deleteGame);
 

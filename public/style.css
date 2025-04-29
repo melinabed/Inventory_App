@@ -15,6 +15,10 @@ body {
 
 /* Header */
 
+a {
+  text-decoration: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -147,13 +151,13 @@ main h2 {
 
 .card a {
   text-decoration: none;
-  color: oklch(98.5% 0 0);
+  color: var(--white);
 }
 
 .card-image {
   border-radius: 10px;
   height: auto;
-  min-width: 500px;
+  min-width: 450px;
 }
 
 #all-games-link {
@@ -308,4 +312,34 @@ main h2 {
 #delete-button:hover {
   background-color: var(--hotPink);
   color: var(--black0);
+}
+
+/*Form Error Container*/
+
+.form-error-container {
+  list-style: none;
+  color: var(--hotPink1);
+  padding: 0;
+}
+
+/*Search Error Container*/
+
+.search-error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.search-error-container h1 {
+  color: var(--white);
+}
+
+.search-error-container a {
+  background-color: var(--black1);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
 }
