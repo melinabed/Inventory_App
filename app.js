@@ -28,5 +28,3 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.LOCAL_PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
-
-//Error Handling? (80% there)
