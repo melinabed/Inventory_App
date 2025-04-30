@@ -21,7 +21,7 @@ a {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 40px;
   background-color: var(--black0);
@@ -41,7 +41,7 @@ nav {
   gap: 10px;
 }
 
-nav form input {
+header form input {
   padding: 5px 10px;
   background-color: var(--black1);
   border-radius: 10px 0 0 10px;
@@ -49,29 +49,25 @@ nav form input {
   font-size: 1.25rem;
   color: var(--hotPink);
   outline: none;
+  width: 300px;
 }
 
-nav form {
-  margin-right: 20px;
+header form {
   display: flex;
-}
-
-.links {
-  margin-right: 50px;
 }
 
 .links a {
   font-size: 1.5rem;
   color: gray;
   text-decoration: none;
-  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .links a:hover {
   color: var(--white);
 }
 
-nav form button {
+header form button {
   background-color: var(--hotPink);
   border: none;
   border-radius: 0 10px 10px 0;
@@ -80,6 +76,20 @@ nav form button {
 
 #search-icon {
   background-color: var(--hotPink);
+}
+
+.sidebar {
+  display: none;
+}
+
+#sidebar-button-open {
+  display: none;
+}
+
+#sidebar-button-open,
+#sidebar-button-closed {
+  background-color: transparent;
+  border: none;
 }
 
 /* Home Page */
@@ -164,9 +174,12 @@ main h2 {
   max-width: 550px;
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
 #all-games-link {
-  position: relative;
-  left: 45%;
   background-color: var(--hotPink);
   color: var(--black0);
   font-size: 1.25rem;
@@ -291,6 +304,7 @@ main h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  padding: 0;
 }
 
 .search-item {
@@ -353,4 +367,101 @@ main h2 {
   padding: 10px;
   border-radius: 10px;
   font-weight: bold;
+}
+
+/*Mobile Layout*/
+
+@media screen and (max-width: 390px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    display: grid;
+    padding: 10px;
+  }
+
+  #sidebar-button-open {
+    display: block;
+  }
+
+  .left-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    text-align: right;
+  }
+
+  header form input {
+    padding: 10px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .sidebar-open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background: linear-gradient(to right, var(--black0), var(--black1));
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .sidebar-open a {
+    color: var(--hotPink);
+    font-size: 1.5rem;
+    font-family: "Jersey 10", sans-serif;
+  }
+
+  main {
+    padding: 10px;
+    width: 100vw;
+  }
+
+  main h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .game-card-container {
+    justify-content: center;
+  }
+
+  .card {
+    max-width: 360px;
+  }
+
+  .card-image {
+    max-width: 350px;
+  }
+
+  .categories-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-result {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-item img {
+    height: auto;
+    max-width: 350px;
+  }
+
+  .gameId-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

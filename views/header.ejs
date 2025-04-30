@@ -1,18 +1,31 @@
 <header>
-  <a href="/">
-    <h1>Ctrl+Sim</h1>
-  </a>
+  <div class="left-header">
+    <button id="sidebar-button-open">
+      <img src="/images/sidebarIcon.svg" alt="Sidebar Icon" />
+    </button>
+    <div class="sidebar">
+      <button id="sidebar-button-closed">
+        <img src="/images/exitSidebarIcon.svg" alt="Sidebar Icon" />
+      </button>
+      <a href="/">Home</a>
+      <a href="/categories">Categories</a>
+      <a href="/getForm">Submit a Game</a>
+    </div>
+    <a href="/">
+      <h1>Ctrl+Sim</h1>
+    </a>
+  </div>
+  <form action="/search" method="post">
+    <input type="text" placeholder="Search..." id="search" name="search" />
+    <button type="submit">
+      <img id="search-icon" src="/images/searchIcon.svg" alt="Search Icon" />
+    </button>
+  </form>
   <nav>
     <div class="links">
       <a href="/">Home</a>
       <a href="/categories">Categories</a>
       <a href="/getForm">Submit a Game</a>
     </div>
-    <form action="/search" method="post">
-      <input type="text" placeholder="Search..." id="search" name="search" />
-      <button type="submit">
-        <img id="search-icon" src="/images/searchIcon.svg" alt="Search Icon" />
-      </button>
-    </form>
   </nav>
 </header>
