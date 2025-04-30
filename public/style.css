@@ -82,7 +82,7 @@ nav form button {
   background-color: var(--hotPink);
 }
 
-/**/
+/* Home Page */
 
 main {
   padding: 40px;
@@ -93,6 +93,16 @@ main h2 {
   color: var(--white);
   font-size: 2rem;
   text-align: center;
+  margin: 0;
+}
+
+.game-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  place-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 .gameId-container {
@@ -101,25 +111,18 @@ main h2 {
   align-items: center;
   color: var(--white);
   gap: 50px;
-  font-weight: bold;
 }
 
 .gameId-container .image-container img {
   border-radius: 10px;
   height: auto;
-  min-width: 500px;
-}
-
-.game-card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  list-style: none;
+  max-width: 500px;
 }
 
 .categories-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  place-items: center;
   gap: 20px;
   list-style: none;
 }
@@ -134,6 +137,7 @@ main h2 {
   text-align: center;
   border: 2px solid var(--hotPink);
   cursor: pointer;
+  width: 80%;
 }
 
 .categories-container .card:hover {
@@ -157,7 +161,7 @@ main h2 {
 .card-image {
   border-radius: 10px;
   height: auto;
-  min-width: 450px;
+  max-width: 550px;
 }
 
 #all-games-link {
@@ -188,7 +192,13 @@ main h2 {
 
 .games-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  place-items: center;
+  gap: 10px;
+}
+
+.game-card {
+  margin-top: 50px;
 }
 
 .game-card a {
@@ -270,17 +280,9 @@ main h2 {
 
 /* Search results page */
 
-.search-results-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--black0);
-}
-
 .search-results-container h2 {
   color: var(--white);
+  text-align: center;
 }
 
 .search-result {
@@ -288,10 +290,19 @@ main h2 {
   color: var(--white);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .search-item {
   text-decoration: none;
+}
+
+.search-item a {
+  color: var(--white);
+}
+
+.search-item img {
+  border-radius: 10px;
 }
 
 /*Delete Button*/

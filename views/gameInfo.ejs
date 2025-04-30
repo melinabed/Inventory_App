@@ -19,10 +19,10 @@
         </div>
       </div>
       <div class="info">
-        <p>Developer: <%= game.developer %></p>
-        <p>Publisher: <%= game.publisher %></p>
-        <p>Release Date: <%= game.release_date %></p>
-        <p>Price: <%= game.price === "0.00" ? "Free" : game.price %></p>
+        <p><b>Developer:</b> <%= game.developer %></p>
+        <p><b>Publisher:</b> <%= game.publisher %></p>
+        <p><b>Release Date:</b> <%= game.release_date %></p>
+        <p><b>Price:</b> <%= game.price === "0.00" ? "Free" : game.price %></p>
         <form
           action="/delete/<%= game.id %>"
           method="post"
