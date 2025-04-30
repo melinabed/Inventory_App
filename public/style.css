@@ -201,6 +201,23 @@ main h2 {
   gap: 50px;
 }
 
+.error404-container img {
+  border-radius: 10px;
+}
+
+.error404-container a {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.error404-container a:hover {
+  background-color: var(--white);
+  color: var(--black0);
+}
+
 /* gameInCategory Page */
 
 .games-container {
