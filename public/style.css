@@ -481,4 +481,19 @@ main h2 {
     display: flex;
     flex-direction: column;
   }
+
+  .games-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gameId-container .image-container img {
+    max-width: 350px;
+  }
+
+  .game-card img {
+    max-width: 350px;
+  }
 }

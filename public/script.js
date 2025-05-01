@@ -14,3 +14,13 @@ sidebarBtnClosed.addEventListener("click", () => {
   sidebar.classList.toggle("sidebar-open");
   sidebarBtnOpen.style.display = "block";
 });
+
+function confirmDelete() {
+  const password = prompt("Enter the admin password to delete this game.");
+  if (password === "simslife123") {
+    return true;
+  } else {
+    alert("Incorrect password");
+    return false;
+  }
+}
