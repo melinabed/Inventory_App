@@ -24,3 +24,5 @@ function confirmDelete() {
     return false;
   }
 }
+
+console.log("hello world");
