@@ -388,7 +388,7 @@ main h2 {
 
 /*Mobile Layout*/
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 490px) {
   body {
     overflow-x: hidden;
   }
@@ -454,11 +454,11 @@ main h2 {
   }
 
   .card {
-    max-width: 360px;
+    max-width: 460px;
   }
 
   .card-image {
-    max-width: 350px;
+    max-width: 450px;
   }
 
   .categories-container {
@@ -474,7 +474,7 @@ main h2 {
 
   .search-item img {
     height: auto;
-    max-width: 350px;
+    max-width: 450px;
   }
 
   .gameId-container {
@@ -490,10 +490,10 @@ main h2 {
   }
 
   .gameId-container .image-container img {
-    max-width: 350px;
+    max-width: 450px;
   }
 
   .game-card img {
-    max-width: 350px;
+    max-width: 450px;
   }
 }
